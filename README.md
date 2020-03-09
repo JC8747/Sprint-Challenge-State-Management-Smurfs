@@ -23,10 +23,15 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+    Context API uses a Provider and Consumer to reduce or elminate to pass props through all components within an app. Instead of drilling down through all the components, we can go straight to the state we want to change.
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+  The Store contains the State Tree for the application, and it is considered the single source of truth because it contains all the data while only being changeable through the Actions. Actions are information payloads that are dispatched to the store. Reducers are functions that receive data from Actions and then determine what the current state should be based on that information.
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+  A Component state is limited to its specific component, and can only be passed down through children-props. An application state is kept in the Store and can be accessed by componenets. Component states are good for keeping track of information that only effects a specific component, while Application states can effect multiple components. 
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+  Redux-thunk is a piece of middleware that allows our application to wait on a response from an external API. This compensates for the inevitable timelapse that occurs when a request is sent, received and processed, and an answer returned. It changes our action-creators into functions which hold until the request is complete and the cycle can continue.
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+    I like the idea behind Context API very much. Reducing the need to drill down through props has the potential for not only cleaner code but also noticeable efficiency gains within large applications. It may only be noticeable at scale, but by building it into even smaller applications the opportunity to scale up without refactoring is preserved.
 
 ## Project Set Up
 
